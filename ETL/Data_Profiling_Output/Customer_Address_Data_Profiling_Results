@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{FAB43AC8-84FA-4102-95A1-CF635FAAF156}" Name="Bike_Data_Profiling_Results">
+      <DtsConnectionManagerID>Bike_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{A92C2F56-CB96-4E13-B428-73CDFDB4E61F}" Name="Bike_Rentals_Data_Profiling_Results">
+      <DtsConnectionManagerID>Bike_Rentals_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{C1E18A94-F08B-422B-8DB5-452E240C90B0}" Name="Customer_Address_Data_Profiling_Results">
+      <DtsConnectionManagerID>Customer_Address_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{54C508AF-F382-42A3-A9F9-C74DC2007DDC}" Name="Customer_Data_Profiling_Results">
+      <DtsConnectionManagerID>Customer_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CCC9D914-5C9D-470E-B59A-DC9D444846B6}" Name="KOSALEE.SLIIT_Bike_Staging">
+      <DtsConnectionManagerID>KOSALEE.SLIIT_Bike_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{ABBE1C11-754B-417B-98D2-17AEA0F67290}" Name="Station_Data_Profiling_Results">
+      <DtsConnectionManagerID>Station_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{63A2D95C-208E-40B3-BBE4-8FF1C2671290}" Name="Trip_Data_Profiling_Results">
+      <DtsConnectionManagerID>Trip_Data_Profiling_Results</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table Schema="dbo" Table="StgCustomer_Address" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table Schema="dbo" Table="StgCustomer_Address" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table Schema="dbo" Table="StgCustomer_Address" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table Schema="dbo" Table="StgCustomer_Address" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table Schema="dbo" Table="StgCustomer_Address" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Customer_Id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Address_Type" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>41</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Street" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Customer_Id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1021</MinValue>
+        <MaxValue>6020</MaxValue>
+        <Mean>3520.5</Mean>
+        <StdDev>1443.37564410655</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Address_Type" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>4</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>5000</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>15</MinLength>
+        <MaxLength>15</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>5000</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>19</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>549</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>560</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>830</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>1283</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>361</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1130</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>245</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Street" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>10</MinLength>
+        <MaxLength>18</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>660</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>879</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>96</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>192</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>1137</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>218</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>97</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>983</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>738</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Address_Type" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Home</Value>
+            <Count>5000</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>California, USA</Value>
+            <Count>5000</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>11</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Los Angeles</Value>
+            <Count>587</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>San Jose</Value>
+            <Count>245</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>San Diego</Value>
+            <Count>549</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anaheim</Value>
+            <Count>191</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BakersField</Value>
+            <Count>543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fresno</Value>
+            <Count>560</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Long Beach</Value>
+            <Count>839</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sacremento</Value>
+            <Count>444</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>San Francisco</Value>
+            <Count>361</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oakland</Value>
+            <Count>639</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CCC9D914-5C9D-470E-B59A-DC9D444846B6}</DataSourceID>
+        <Table DataSource="KOSALEE" Database="SLIIT_Bike_Staging" Schema="dbo" Table="StgCustomer_Address" RowCount="5000" />
+        <Column Name="Street" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>49</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Crescent Street</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Laurel Lane</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clay Street</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Woodland Drive</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Front Street North</Value>
+            <Count>96</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Charles Street</Value>
+            <Count>115</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rose Street</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hanover Court</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Windsor Drive</Value>
+            <Count>107</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Garfield Avenue</Value>
+            <Count>80</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Franklin Avenue</Value>
+            <Count>96</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Linden Avenue</Value>
+            <Count>85</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Court Street</Value>
+            <Count>85</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cedar Avenue</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>White Street</Value>
+            <Count>106</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ann Street</Value>
+            <Count>90</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Forest Street</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Broad Street</Value>
+            <Count>88</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Laurel Drive</Value>
+            <Count>113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Port Street</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Country Club Road</Value>
+            <Count>97</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cedar Lane</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Briarwood Drive</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pleasant Street</Value>
+            <Count>100</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Devon Court</Value>
+            <Count>95</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Olive Street</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Williams Street</Value>
+            <Count>91</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Madison Avenue</Value>
+            <Count>95</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Orchard Avenue</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Main Street</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Monroe Street</Value>
+            <Count>114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Atlantic Avenue</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King Street</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heather Lane</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Summit Avenue</Value>
+            <Count>113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Warren Avenue</Value>
+            <Count>109</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cottage Street</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Willow Avenue</Value>
+            <Count>203</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maiden Lane</Value>
+            <Count>99</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Highland Drive</Value>
+            <Count>109</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>John Street</Value>
+            <Count>106</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Essex Court</Value>
+            <Count>96</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>River Street</Value>
+            <Count>100</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Andover Court</Value>
+            <Count>87</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Franklin Court</Value>
+            <Count>101</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Avenue</Value>
+            <Count>106</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Grand Avenue</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fairway Drive</Value>
+            <Count>119</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jefferson Avenue</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
